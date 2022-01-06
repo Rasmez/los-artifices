@@ -45,8 +45,6 @@ plugins:
     - print-site:
         enabled: true
         add_to_navigation: false
-        #print_page_title: 'VenSoft'
-        add_print_site_banner: true
         # Indice
         add_table_of_contents: true
         toc_title: 'Tabla de Contenido'
