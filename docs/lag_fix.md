@@ -1,0 +1,1 @@
+# Resolver juego inestable o con "pegadas

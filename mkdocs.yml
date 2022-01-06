@@ -7,6 +7,8 @@ nav:
   - Inicio: 'index.md'
   - Gremio:
     - 'Bienvenid@': 'welcome.md'
+  - Problemas Técnicos:
+    - 'Resolver juego inestable o con "pegadas"': 'ram_fix.md'
 
 theme:
   name: 'material'
