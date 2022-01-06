@@ -1,0 +1,6 @@
+mkdocs
+mkdocs-material
+mkdocs-localsearch
+mkdocs-print-site-plugin
+html5lib
+htmlark
