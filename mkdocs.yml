@@ -22,14 +22,14 @@ theme:
     text: Roboto
   palette:
     - scheme: default
-      primary: 'black'
-      accent: 'grey'
+      primary: 'grey'
+      accent: 'black'
       toggle:
         icon: material/weather-night
         name: Activar a modo oscuro
     - scheme: slate
       primary: 'grey'
-      accent: 'grey'
+      accent: 'black'
       toggle:
         icon: material/weather-sunny
         name: Desactivar modo oscuro
