@@ -35,8 +35,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Desactivar modo oscuro
-  icon:
-    logo: assets/logo.svg
+  logo: assets/logo.svg
   favicon: assets/favicon.png
 
 plugins:
