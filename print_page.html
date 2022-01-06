@@ -274,6 +274,54 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Problemas Técnicos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Problemas Técnicos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Problemas Técnicos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ram_fix.html" class="md-nav__link">
+        Resolver juego inestable o con "pegadas"
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -355,7 +403,64 @@
                             Gremio <a class='headerlink' href='#section-gremio' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="welcome"><h1 id="welcome-bienvenid-a-la-locura">Bienvenid@ a la LOCURA</h1>
-<p>Esto es un texto de prueba.</p></section><h1 class='nav-section-title-end'>Ended: Gremio</h1></div>
+<p>Esto es un texto de prueba.</p></section><h1 class='nav-section-title-end'>Ended: Gremio</h1>
+                        <h1 class='nav-section-title' id='section-problemas-técnicos'>
+                            Problemas Técnicos <a class='headerlink' href='#section-problemas-técnicos' title='Permanent link'>↵</a>
+                        </h1>
+                        <section class="print-page" id="ram_fix"><h1 id="ram_fix-resolver-juego-inestable-o-con-pegadas">Resolver juego inestable o con "pegadas"</h1>
+<p>El 99.9% de los problemas de inestabilidad y "pegadas" de Wakfu proviene de la insuficiencia de recursos,
+es decir, falta de poder de procesador (tanto CPU y GPU) y memoria RAM disponible, aparte por su supuesto de la hitória mala optimización y manejo "basura" de Java y de la falta de atención que ha tenido la empresa
+(Ankama Games) al juego, por desgracia esto nos afecta a todos de forma distinta y es difícil saber que hacer en cada situación ya que cada PC es distinta, y demás. La solución mas obvia es, por consecuencia, asignar mas recursos al juego de los que vienen configurados por defecto, y de esta forma solventar el problema hasta que la empres se digne a tomar cartas en el asunto o el juego sea reprogramado en otro lenguaje.</p>
+<p>Para los imbéciles, neófitos y Yopukas, aquí les va el tutorial:</p>
+<ul>
+<li>
+<p>Abre el <strong>Ankama Launcher</strong> y ve a la pestaña de <strong>WAKFU</strong></p>
+</li>
+<li>
+<p>Haz click en el botón ⛭ <strong>Opciones del juego</strong> que se encuentra debajo del botón <strong>JUGAR</strong></p>
+</li>
+<li>
+<p>Activa la opción <strong>Mostrar configuraciones avanzadas</strong> en la primera caja de texto (<strong>Java XMS</strong>), borra la cifra por defecto (200m) y reemplazala por <strong>al menos 512m</strong></p>
+</li>
+<li>
+<p>En la segunda caja de texto (<strong>Java XMX</strong>) , reemplaza el valor por defecto (512m) por <strong>al menos 768m</strong></p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Solo tocar si sabes que rayos estas haciendo, <strong>YOPUKAS DE LA AUDIENCIA, ALEJENSE, CUENTEN HASTA 10 Y SIGAN ALEJÁNDOSE</strong></p>
+</div>
+<ul>
+<li>En la tercera caja de texto, reemplaza los valores por defecto</li>
+</ul>
+<p>´´´
+-XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -Djava.net.preferIPv4Stack=true -Dsun.awt.noerasebackground=true -Dsun.java2d.noddraw=true -Djogl.disable.openglarbcontext
+´´´</p>
+<p>Por esto:</p>
+<p>´´´
+-XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -Djava.net.preferIPv4Stack=true -Dsun.awt.noerasebackground=true -Dsun.java2d.noddraw=true -Djogl.disable.openglarbcontext -d64
+´´´</p>
+<p>Nota: Esta modificación sólo es válida para sistemas de 64 bits, si no estas seguro de tu sistema, no toques esto.</p>
+<p>Si por alguna razón el juego deja de iniciarse, realiza las siguientes pruebas una por una (es decir, haz el cambio, prueba, si funciona bien, sino, prueba el siguiente):</p>
+<ul>
+<li>
+<p>Cierra el juego y el lanzador por completo</p>
+</li>
+<li>
+<p>Revisa que los cambios fueron realizados siguiendo las instrucciones</p>
+</li>
+<li>
+<p>Desactiva las opciones avanzadas y prueba iniciar el juego nuevamente</p>
+</li>
+<li>
+<p>Probablemente tu equipo no tiene suficientes recursos, baja el los valores de memoria</p>
+</li>
+<li>
+<p>Vuelve a los valores por defecto para las 2 variables de memoria (200m y 512m)</p>
+</li>
+<li>
+<p>Si el problema persiste, desactiva las opciones por completo, por una razón u otra esta optimización no se puede usar en tu equipo, consulta a un especialista (como yo por ejemplo, eso si, te voy a cobrar <img alt="💰" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4b0.svg" title=":moneybag:" /> #CuentasClaras, tranquilo, es poco, probablemente unas pocas kamas, euros, dolares o lo que sea tu moneda local)</p>
+</li>
+</ul></section><h1 class='nav-section-title-end'>Ended: Problemas Técnicos</h1></div>
 
               
 
