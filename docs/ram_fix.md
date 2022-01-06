@@ -18,15 +18,18 @@ Para los imbéciles, neófitos y Yopukas, aquí les va el tutorial:
 
 * En la tercera caja de texto, reemplaza los valores por defecto
 
-´´´
+```bash
+
 -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -Djava.net.preferIPv4Stack=true -Dsun.awt.noerasebackground=true -Dsun.java2d.noddraw=true -Djogl.disable.openglarbcontext
-´´´
+```
 
  Por esto:
 
-´´´
+```bash
+
 -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -Djava.net.preferIPv4Stack=true -Dsun.awt.noerasebackground=true -Dsun.java2d.noddraw=true -Djogl.disable.openglarbcontext -d64
-´´´
+
+```
 
  Nota: Esta modificación sólo es válida para sistemas de 64 bits, si no estas seguro de tu sistema, no toques esto.
 
