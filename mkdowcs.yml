@@ -1,0 +1,78 @@
+site_name: Los Artífices
+
+site_author: Ricardo Vásquez (Rasmez)
+copyright: Ricardo Vásquez.
+
+nav:
+  - Inicio: 'index.md'
+  - Gremio:
+    - 'Bienvenid@': 'welcome.md'
+
+theme:
+  name: 'material'
+  language: es
+  custom_dir: theme
+  features:
+    - navigation.instant
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+  font:
+    text: Roboto
+  palette:
+    - scheme: default
+      primary: 'black'
+      accent: 'grey'
+      toggle:
+        icon: material/weather-night
+        name: Activar a modo oscuro
+    - scheme: slate
+      primary: 'grey'
+      accent: 'grey'
+      toggle:
+        icon: material/weather-sunny
+        name: Desactivar modo oscuro
+  icon:
+    logo: material/book-open-variant
+
+
+plugins:
+    - search:
+        lang:
+          - es
+    - localsearch
+    - print-site:
+        enabled: true
+        add_to_navigation: false
+        #print_page_title: 'VenSoft'
+        add_print_site_banner: true
+        # Indice
+        add_table_of_contents: true
+        toc_title: 'Tabla de Contenido'
+        toc_depth: 6
+        # Contenido
+        add_full_urls: true
+        enumerate_headings: true
+        enumerate_figures: true
+        # Banner de la página de impresión
+        add_print_site_banner: true
+        #print_site_banner_template: "docs/assets/templates/custom_banner.tpl"
+        # Portada personalizada
+        add_cover_page: true
+        #cover_page_template: "docs/assets/templates/custom_cover_page.tpl"
+
+# Agregado para localsearch y estandarizar urls locales
+use_directory_urls: false
+
+extra:
+  generator: false
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  - admonition
+  - pymdownx.details
