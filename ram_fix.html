@@ -372,13 +372,14 @@ es decir, falta de poder de procesador (tanto CPU y GPU) y memoria RAM disponibl
 <ul>
 <li>En la tercera caja de texto, reemplaza los valores por defecto</li>
 </ul>
-<p>´´´
+<pre><code class="language-bash">
 -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -Djava.net.preferIPv4Stack=true -Dsun.awt.noerasebackground=true -Dsun.java2d.noddraw=true -Djogl.disable.openglarbcontext
-´´´</p>
+</code></pre>
 <p>Por esto:</p>
-<p>´´´
+<pre><code class="language-bash">
 -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -Djava.net.preferIPv4Stack=true -Dsun.awt.noerasebackground=true -Dsun.java2d.noddraw=true -Djogl.disable.openglarbcontext -d64
-´´´</p>
+
+</code></pre>
 <p>Nota: Esta modificación sólo es válida para sistemas de 64 bits, si no estas seguro de tu sistema, no toques esto.</p>
 <p>Si por alguna razón el juego deja de iniciarse, realiza las siguientes pruebas una por una (es decir, haz el cambio, prueba, si funciona bien, sino, prueba el siguiente):</p>
 <ul>
