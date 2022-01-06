@@ -1,0 +1,52 @@
+name: mkdocs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+
+    steps:
+      - name: 🔎 Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: ⛭ Set up Python ${{ matrix.python-version }}...
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      
+      - name: ⬆️ Upgrade pip
+        run: |
+          # install pip=>20.1 to use "pip cache dir"
+          python3 -m pip install --upgrade pip
+          python3 -m pip -V
+      
+      - name: ⛭ Get pip cache dir
+        id: pip-cache
+        run: echo "::set-output name=dir::$(pip cache dir)"
+      
+      - name: ⛭ Cache dependencies
+        uses: actions/cache@v2.1.6
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: ⛭ Install requirements
+        run: python3 -m pip install -r ./requirements.txt
+      
+      - name: 📝 Build docs
+        run: mkdocs build
+        
+      - name: 🚀 Deploy 
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
